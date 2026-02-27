@@ -120,7 +120,7 @@ function AdminPanel() {
               {[
                 { key: 'nombre',     label: 'Nombre',     type: 'text',   required: true },
                 { key: 'marca',      label: 'Marca',      type: 'text',   required: false },
-                { key: 'precio',     label: 'Precio USD', type: 'number', required: true },
+                { key: 'precio',     label: 'Precio MXN', type: 'number', required: true },
                 { key: 'stock',      label: 'Stock',      type: 'number', required: true },
                 { key: 'imagen_url', label: 'URL Imagen', type: 'url',    required: false },
               ].map(f => (

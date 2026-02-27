@@ -85,6 +85,6 @@ export const productosApi = {
 export const divisasApi = {
   getTasas: () => apiFetch('/divisas/tasas'),
 
-  convertir: (monto, de = 'USD', a = 'MXN') =>
+  convertir: (monto, de = 'MXN', a = 'USD') =>
     apiFetch(`/divisas/convertir?monto=${monto}&de=${de}&a=${a}`),
 };
