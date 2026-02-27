@@ -10,63 +10,59 @@ export default function ProductCard({ producto, onDelete, onEdit, showAdminActio
   const { _id, nombre, marca, precio, stock, categoria, imagen_url } = producto;
 
   return (
-    <div className="rounded-2xl overflow-hidden flex flex-col transition-transform hover:-translate-y-1 group"
-      style={{ background: '#111620', border: '1px solid rgba(255,255,255,0.06)' }}>
-
-      {/* Image */}
-      <div className="relative h-44 flex items-center justify-center overflow-hidden"
-        style={{ background: '#0d1017' }}>
+    <div className="group flex flex-col bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden hover:border-[#f97316] transition-all duration-300">
+      
+      {/* Imagen del artículo (Con más altura y padding) */}
+      <div className="relative h-72 flex items-center justify-center bg-[#121212] p-8 border-b border-white/10">
         {imagen_url ? (
-          <Image src={imagen_url} alt={nombre} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+          <Image src={imagen_url} alt={nombre} fill className="object-contain p-8 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
         ) : (
-          <span className="text-5xl opacity-40">{CATEGORY_ICONS[categoria] || '📦'}</span>
+          <span className="text-6xl opacity-20">{CATEGORY_ICONS[categoria] || '📦'}</span>
         )}
-        {/* Badges */}
-        <div className="absolute top-3 left-3 flex gap-1.5">
-          {categoria && (
-            <span className="text-xs px-2 py-0.5 rounded-full font-medium capitalize"
-              style={{ background: 'rgba(198,241,53,0.15)', color: '#f97316', border: '1px solid rgba(198,241,53,0.3)' }}>
-              {categoria}
-            </span>
-          )}
-        </div>
-        {stock !== undefined && (
-          <div className="absolute top-3 right-3">
-            <span className={`text-xs px-2 py-0.5 rounded-full ${
-              stock > 10 ? 'bg-green-500/15 text-green-400' :
-              stock > 0  ? 'bg-yellow-500/15 text-yellow-400' :
-                           'bg-red-500/15 text-red-400'
-            }`}>
-              {stock > 0 ? `${stock} uds.` : 'Sin stock'}
-            </span>
+        
+        {/* Etiqueta de stock */}
+        {stock !== undefined && stock <= 0 && (
+          <div className="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-red-500/10 text-red-500 border border-red-500/20 rounded-md">
+            Agotado
           </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-4 gap-1">
-        {marca && <p className="text-xs text-gray-500 uppercase tracking-widest">{marca}</p>}
-        <p className="font-semibold text-white leading-snug text-sm line-clamp-2">{nombre}</p>
-        <p className="text-lg font-bold mt-auto pt-2" style={{ color: '#f97316' }}>
+      {/* Información (Padding aumentado a p-8 para separar del borde) */}
+      <div className="p-8 flex flex-col flex-1 gap-2">
+        <p className="text-[#737373] text-xs uppercase tracking-widest">{marca || 'Revesshop'}</p>
+        <h3 className="text-white font-medium text-xl leading-snug line-clamp-2">{nombre}</h3>
+        
+        <p className="text-[#f97316] text-2xl font-bold mt-auto pt-6">
           ${Number(precio).toLocaleString('en-US', { minimumFractionDigits: 2 })}
         </p>
 
-        <div className="flex gap-2 mt-3">
-          <Link href={`/products/${_id}`}
-            className="flex-1 text-center text-sm py-2 rounded-lg font-medium transition-all border border-white/10 hover:border-white/20 text-gray-300 hover:text-white">
-            Ver →
+        {/* Botones de acción (Más margen superior y separación) */}
+        <div className="mt-8 flex flex-wrap gap-4">
+          <Link 
+            href={`/products/${_id}`} 
+            className="flex-1 text-center py-3.5 px-4 text-sm font-bold tracking-wide bg-white/5 text-white border border-white/10 rounded-lg hover:bg-[#f97316] hover:border-[#f97316] hover:text-black transition-all"
+          >
+            VER DETALLE
           </Link>
+          
           {showAdminActions && (
-            <>
-              <button onClick={() => onEdit?.(_id)}
-                className="px-3 py-2 text-xs rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white/20 transition-colors">
+            <div className="flex gap-3 w-full sm:w-auto">
+              <button 
+                onClick={() => onEdit?.(_id)} 
+                className="flex-1 sm:flex-none px-5 py-3.5 text-sm bg-white/5 text-white border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+                title="Editar"
+              >
                 ✎
               </button>
-              <button onClick={() => onDelete?.(_id)}
-                className="px-3 py-2 text-xs rounded-lg border border-red-500/20 text-red-400 hover:bg-red-500/10 transition-colors">
+              <button 
+                onClick={() => onDelete?.(_id)} 
+                className="flex-1 sm:flex-none px-5 py-3.5 text-sm bg-red-500/10 text-red-500 border border-red-500/20 rounded-lg hover:bg-red-500/20 transition-colors"
+                title="Eliminar"
+              >
                 ✕
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>

@@ -10,6 +10,9 @@
   --muted:  #737373;
 }
 
+
+
+
 @theme inline {
   --color-orange: #f97316;
   --color-black:  #000000;
@@ -20,7 +23,7 @@
 }
 
 /* ── Base Simple ── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 2; }
 
 html, body {
   background-color: var(--black);
