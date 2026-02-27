@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-display text-2xl tracking-widest text-white">
           <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="8" fill="#c6f135"/>
+            <rect width="32" height="32" rx="8" fill="#f97316"/>
             <path d="M8 22 L16 8 L24 22" stroke="#080a0f" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M11 18 L21 18" stroke="#080a0f" strokeWidth="3" strokeLinecap="round"/>
           </svg>
@@ -53,7 +53,7 @@ export default function Navbar() {
               <Link href="/profile"
                 className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black"
-                  style={{ background: '#c6f135' }}>
+                  style={{ background: '#f97316' }}>
                   {user.nombre?.[0]?.toUpperCase() || 'U'}
                 </div>
                 {user.nombre}
@@ -71,7 +71,7 @@ export default function Navbar() {
               </Link>
               <Link href="/auth/register"
                 className="text-sm font-semibold px-4 py-2 rounded-lg transition-all"
-                style={{ background: '#c6f135', color: '#080a0f' }}>
+                style={{ background: '#f97316', color: '#080a0f' }}>
                 Registro
               </Link>
             </div>

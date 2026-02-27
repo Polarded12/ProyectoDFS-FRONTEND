@@ -16,7 +16,7 @@ function strengthLevel(pwd) {
 }
 
 const STRENGTH_LABELS = ['', 'Débil', 'Regular', 'Buena', 'Fuerte'];
-const STRENGTH_COLORS = ['', '#ef4444', '#f97316', '#eab308', '#c6f135'];
+const STRENGTH_COLORS = ['', '#ef4444', '#f97316', '#eab308', '#f97316'];
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -97,14 +97,14 @@ export default function RegisterPage() {
 
             <button type="submit" disabled={loading}
               className="mt-2 py-3 rounded-xl font-bold text-black text-sm disabled:opacity-50 hover:brightness-110 transition-all"
-              style={{ background: '#c6f135' }}>
+              style={{ background: '#f97316' }}>
               {loading ? 'Registrando...' : 'Crear cuenta'}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             ¿Ya tienes cuenta?{' '}
-            <Link href="/auth/login" className="hover:underline" style={{ color: '#c6f135' }}>Entrar</Link>
+            <Link href="/auth/login" className="hover:underline" style={{ color: '#f97316' }}>Entrar</Link>
           </p>
         </div>
       </div>

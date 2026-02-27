@@ -29,14 +29,14 @@ export default function ProfilePage() {
         <div className="rounded-2xl p-8 mb-6 flex items-center gap-6"
           style={{ background: '#111620', border: '1px solid rgba(255,255,255,0.06)' }}>
           <div className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold text-black shrink-0"
-            style={{ background: '#c6f135' }}>
+            style={{ background: '#f97316' }}>
             {user.nombre?.[0]?.toUpperCase() || 'U'}
           </div>
           <div>
             <h2 className="text-2xl font-bold text-white">{user.nombre}</h2>
             <p className="text-gray-400 text-sm">{user.email}</p>
             <span className="inline-block mt-2 text-xs px-3 py-1 rounded-full font-medium capitalize"
-              style={{ background: isAdmin ? 'rgba(198,241,53,0.15)' : 'rgba(255,255,255,0.06)', color: isAdmin ? '#c6f135' : '#9ca3af' }}>
+              style={{ background: isAdmin ? 'rgba(198,241,53,0.15)' : 'rgba(255,255,255,0.06)', color: isAdmin ? '#f97316' : '#9ca3af' }}>
               {user.rol || 'usuario'}
             </span>
           </div>
@@ -70,7 +70,7 @@ export default function ProfilePage() {
           {isAdmin && (
             <Link href="/admin"
               className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:brightness-110 text-black"
-              style={{ background: '#c6f135' }}>
+              style={{ background: '#f97316' }}>
               Panel admin →
             </Link>
           )}

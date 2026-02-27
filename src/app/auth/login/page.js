@@ -56,14 +56,14 @@ export default function LoginPage() {
             </div>
             <button type="submit" disabled={loading}
               className="mt-2 py-3 rounded-xl font-bold text-black text-sm disabled:opacity-50 transition-all hover:brightness-110"
-              style={{ background: '#c6f135' }}>
+              style={{ background: '#f97316' }}>
               {loading ? 'Entrando...' : 'Entrar'}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             ¿No tienes cuenta?{' '}
-            <Link href="/auth/register" className="hover:underline" style={{ color: '#c6f135' }}>
+            <Link href="/auth/register" className="hover:underline" style={{ color: '#f97316' }}>
               Regístrate
             </Link>
           </p>

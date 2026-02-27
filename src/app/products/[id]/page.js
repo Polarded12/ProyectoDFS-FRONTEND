@@ -83,7 +83,7 @@ export default function ProductDetailPage({ params }) {
             <div className="flex flex-wrap gap-2">
               {categoria && (
                 <span className="text-xs px-3 py-1 rounded-full capitalize"
-                  style={{ background: 'rgba(198,241,53,0.12)', color: '#c6f135', border: '1px solid rgba(198,241,53,0.25)' }}>
+                  style={{ background: 'rgba(198,241,53,0.12)', color: '#f97316', border: '1px solid rgba(198,241,53,0.25)' }}>
                   {categoria}
                 </span>
               )}
@@ -99,7 +99,7 @@ export default function ProductDetailPage({ params }) {
             {marca && <p className="text-sm text-gray-500 uppercase tracking-widest">{marca}</p>}
             <h1 className="text-4xl text-white leading-tight" style={{ fontFamily: 'var(--font-display)' }}>{nombre}</h1>
 
-            <p className="text-4xl font-bold" style={{ color: '#c6f135' }}>
+            <p className="text-4xl font-bold" style={{ color: '#f97316' }}>
               ${Number(precio).toLocaleString('en-US', { minimumFractionDigits: 2 })} USD
             </p>
 
@@ -116,7 +116,7 @@ export default function ProductDetailPage({ params }) {
                 </select>
                 <button onClick={handleConvert} disabled={converting}
                   className="px-5 py-2.5 rounded-lg text-sm font-semibold disabled:opacity-50 transition-all hover:brightness-110 text-black"
-                  style={{ background: '#c6f135' }}>
+                  style={{ background: '#f97316' }}>
                   {converting ? '...' : 'Convertir'}
                 </button>
               </div>

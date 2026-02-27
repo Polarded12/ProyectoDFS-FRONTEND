@@ -25,7 +25,7 @@ export default function ProductCard({ producto, onDelete, onEdit, showAdminActio
         <div className="absolute top-3 left-3 flex gap-1.5">
           {categoria && (
             <span className="text-xs px-2 py-0.5 rounded-full font-medium capitalize"
-              style={{ background: 'rgba(198,241,53,0.15)', color: '#c6f135', border: '1px solid rgba(198,241,53,0.3)' }}>
+              style={{ background: 'rgba(198,241,53,0.15)', color: '#f97316', border: '1px solid rgba(198,241,53,0.3)' }}>
               {categoria}
             </span>
           )}
@@ -47,7 +47,7 @@ export default function ProductCard({ producto, onDelete, onEdit, showAdminActio
       <div className="flex flex-col flex-1 p-4 gap-1">
         {marca && <p className="text-xs text-gray-500 uppercase tracking-widest">{marca}</p>}
         <p className="font-semibold text-white leading-snug text-sm line-clamp-2">{nombre}</p>
-        <p className="text-lg font-bold mt-auto pt-2" style={{ color: '#c6f135' }}>
+        <p className="text-lg font-bold mt-auto pt-2" style={{ color: '#f97316' }}>
           ${Number(precio).toLocaleString('en-US', { minimumFractionDigits: 2 })}
         </p>
 

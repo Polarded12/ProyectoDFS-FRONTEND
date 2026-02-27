@@ -100,7 +100,7 @@ function ProductsCatalog() {
             className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
               !categoria ? 'text-black' : 'text-gray-500 hover:text-gray-300 border border-white/10'
             }`}
-            style={!categoria ? { background: '#c6f135' } : {}}>
+            style={!categoria ? { background: '#f97316' } : {}}>
             Todos
           </button>
           {CATEGORIAS.map(c => (
@@ -108,7 +108,7 @@ function ProductsCatalog() {
               className={`px-4 py-1.5 rounded-full text-xs font-medium capitalize transition-all ${
                 categoria === c ? 'text-black' : 'text-gray-500 hover:text-gray-300 border border-white/10'
               }`}
-              style={categoria === c ? { background: '#c6f135' } : {}}>
+              style={categoria === c ? { background: '#f97316' } : {}}>
               {c}
             </button>
           ))}
@@ -148,7 +148,7 @@ function ProductsCatalog() {
                 className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${
                   p === page ? 'text-black' : 'text-gray-500 hover:text-white border border-white/10'
                 }`}
-                style={p === page ? { background: '#c6f135' } : {}}>
+                style={p === page ? { background: '#f97316' } : {}}>
                 {p}
               </button>
             ))}
