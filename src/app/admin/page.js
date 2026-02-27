@@ -99,7 +99,7 @@ function AdminPanel() {
           </div>
           <button onClick={openNew}
             className="px-5 py-2.5 rounded-xl text-sm font-bold text-black hover:brightness-110 transition-all"
-            style={{ background: '#c6f135' }}>
+            style={{ background: '#f97316' }}>
             + Nuevo producto
           </button>
         </div>
@@ -154,7 +154,7 @@ function AdminPanel() {
               <div className="md:col-span-2 flex gap-3">
                 <button type="submit" disabled={saving}
                   className="px-8 py-3 rounded-xl font-bold text-black text-sm disabled:opacity-50 hover:brightness-110 transition-all"
-                  style={{ background: '#c6f135' }}>
+                  style={{ background: '#f97316' }}>
                   {saving ? 'Guardando...' : editId ? 'Actualizar' : 'Crear producto'}
                 </button>
                 <button type="button" onClick={() => { setShowForm(false); setEditId(null); router.replace('/admin'); }}
@@ -192,11 +192,11 @@ function AdminPanel() {
                     <td className="px-5 py-4 text-gray-400">{p.marca || '—'}</td>
                     <td className="px-5 py-4">
                       <span className="text-xs px-2 py-1 rounded-full capitalize"
-                        style={{ background: 'rgba(198,241,53,0.1)', color: '#c6f135' }}>
+                        style={{ background: 'rgba(198,241,53,0.1)', color: '#f97316' }}>
                         {p.categoria}
                       </span>
                     </td>
-                    <td className="px-5 py-4 font-bold" style={{ color: '#c6f135' }}>
+                    <td className="px-5 py-4 font-bold" style={{ color: '#f97316' }}>
                       ${Number(p.precio).toLocaleString('en-US', { minimumFractionDigits: 2 })}
                     </td>
                     <td className="px-5 py-4">
